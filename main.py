@@ -35,7 +35,7 @@ def koffiepunten():
             else:
                 goednieuws = "er zijn " + str( status_tekst) + " toegevoegd"
     punten = dbfunc.db_GetPunten(session['id'], session['oauth_provider'])
-    return render_template('koffiepunten.html', message=message, punten=str(punten), goednieuws=goednieuws)
+    return render_template('koffiepunten.html', message=message, punten=punten, goednieuws=goednieuws)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -46,7 +46,7 @@ def login():
         
         #login Gijs
         if Username == "Gijs" and Password == "Mijn kamer is een troep!":
-            id = 1
+            id = "1"
             Firstname = "Gijs"
             Lastname = "Schouten"
             Email = "gaatjeniksaan@anoniem.com"
@@ -65,7 +65,7 @@ def login():
         
         #login Joerie
         if Username == "Joerie" and Password == "Mijn kamer is opgeruimt!":
-            id = 2
+            id = '2'
             Firstname = "Joerie"
             Lastname = "van der Meer"
             Email = "gaatjeniksaan@anoniem.com"

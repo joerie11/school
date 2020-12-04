@@ -11,10 +11,11 @@ def strip(input):
 def create_coupon():
     db = client.koffie
     punten_col = db.coupons
-    aantal = 25
+    aantal = 50
     cont = 0
+    index = 1
     while cont != aantal:
-        code = random.randrange(10000000000, 90000000000)
+        code = index
         value = random.randrange(2, 10)
         code_dict = {"code" : code ,"value": value}
 
@@ -25,4 +26,5 @@ def create_coupon():
             punten_col.insert_one(code_dict)
             print("Coupon met code {} aangemaakt".format(punten_col.find_one(code_dict)))
             cont = cont + 1
+            index += 1
 create_coupon()
