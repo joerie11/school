@@ -58,7 +58,7 @@ def login():
             session['last_name'] = Lastname
             session['email'] = Email
             session['oauth_provider'] = Provider
-            exists = dbfunc.db_UserExist(id, provider)
+            exists = dbfunc.db_UserExist(id, Provider)
             if exists == 1:
                 dbfunc.db_makeUser(Username, Firstname, Lastname, Email, id, Provider)
             return redirect(url_for('index'))
@@ -77,7 +77,7 @@ def login():
             session['last_name'] = Lastname
             session['email'] = Email
             session['oauth_provider'] = Provider
-            exists = dbfunc.db_UserExist(id, provider)
+            exists = dbfunc.db_UserExist(id, Provider)
             if exists == 1:
                 dbfunc.db_makeUser(Username, Firstname, Lastname, Email, id, Provider)
             return redirect(url_for('index'))
