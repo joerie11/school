@@ -3,7 +3,6 @@ from authomatic.adapters import WerkzeugAdapter
 from authomatic import Authomatic
 import authomatic
 import dbfunc
-from config import CONFIG
 
 # Instantiate Authomatic.
 # authomatic = Authomatic(CONFIG, 'your secret string', report_errors=False)
@@ -22,10 +21,6 @@ def about():
 def contact():
     return render_template('contact.html')
 
-@app.route('/login')
-def login_page():
-    return render_template('login.html')
-
 @app.route('/koffiepunten', methods=['GET', 'POST'] )
 def koffiepunten():
     message = ''
@@ -42,8 +37,8 @@ def koffiepunten():
     punten = dbfunc.db_GetPunten(session['id'], session['oauth_provider'])
     return render_template('koffiepunten.html', message=message, punten=punten, goednieuws=goednieuws)
 
-@app.route('/logon/static/', methods=['GET', 'POST'])
-def logon():
+@app.route('/login', methods=['GET', 'POST'])
+def login():
     if request.method == 'POST':
         Username = request.form.get('Username')
         Password = request.form.get('Password')
