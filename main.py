@@ -39,6 +39,7 @@ def koffiepunten():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    mislukt = ""
     if request.method == 'POST':
         Username = request.form.get('Username')
         Password = request.form.get('Password')
