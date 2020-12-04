@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block login%}
+<a href="#"><span class="beter-kleur"><span class="glyphicon glyphicon-log-in"> Login</span></span></a>
+{% endblock %}
+{% block body %}
+<center>
+    <h2>login</h2>
+    <br />
+    <div>
+        <!--Links to the login handler-->
+        <form method="post">
+            <label>Username:</label>
+            <input type="text" id="Username" name="Username" />
+            <label>Password:</label>
+            <input type="password" id="Password" name="Password"/>
+            <input type="submit" value="Submit"/>
+        </form>
+        {% if mislukt %}
+            <h2>Login Mislukt.</h2>
+        {% endif %}
+    </div>
+</center>
+{% endblock %}

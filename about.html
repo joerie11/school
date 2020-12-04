@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block extra_menu_option %}
+    {% if session['id'] %}
+<li><a href="/koffiepunten"><span class="beter-kleur">Koffiepunten</span></a></li>
+    {% endif %}
+{% endblock extra_menu_option %}
+
+{% block login%}
+    {% if session['id'] %}
+<div class="dropdown" style="margin-top:8px">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+        <span class="glyphicon glyphicon-user">{{" " + session['name']}}</span>
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+    {% else %}
+<a href="/login"><span class="beter-kleur"><span class="glyphicon glyphicon-log-in"> Login</span></span></a>
+    {% endif %}
+{% endblock %}
+{% block body %}
+<center>
+    <h2>Dit HEEELLLE stuk gaat over ons</h2>
+</center>
+{% endblock %}

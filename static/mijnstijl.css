@@ -1,0 +1,43 @@
+#groen{
+    background-color:green;
+    padding:7px;
+    border-radius:5px;
+}
+.jumbotron{
+    background-image: url("koffie.png");
+    background-repeat: no-repeat;
+	background-size: cover;
+    text-align:center;
+    animation: colorchange 50s;
+    -webkit-animation: colorchange 50s;
+}
+.container-fluid{
+    background-color:black;
+}
+.beter-kleur{
+    color: #d9edf7;
+}
+.beter-kleur:hover{
+    color: #84939a;
+}
+.beter-kleur:active{
+    color: white;
+}
+@keyframes colorchange{
+    0%   {color: red;}
+    25%  {color: yellow;}
+    50%  {color: blue;}
+    75%  {color: green;}
+    100% {color: red;}
+    }
+
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */{
+    0%   {color: red;}
+    25%  {color: yellow;}
+    50%  {color: blue;}
+    75%  {color: green;}
+    100% {color: red;}
+    }
+.klik{
+    background-color: black;
+}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block extra_menu_option %}
+    {% if session['id'] %}
+<li><a href="#"><span class="beter-kleur">KoffiePunten</span></a></li>
+    {% endif %}
+{% endblock extra_menu_option %}
+
+{% block login%}
+    {% if session['id'] %}
+        <div class="dropdown" style="margin-top:8px">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                <span class="glyphicon glyphicon-user">{{" " + session['name']}}</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    {% else %}
+<a href="/login"><span class="beter-kleur"><span class="glyphicon glyphicon-log-in"> Login</span></span></a>
+    {% endif %}
+{% endblock %}
+{% block body %}
+<br />
+<center>
+    <div class="container">
+        <h2>claim uw punten</h2>
+        <h3> U heeft momenteel {{ punten }} Koffiepunten</h3>
+        <br />
+        <form class="form-horizontal" action="" method="post">
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="email">nummer op het pak:</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" maxlength="10" placeholder="Voer hier het nummer in" name="paknummer">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-6">
+                    {% if goednieuws %}
+                    <h4 style="color: green;">{{ goednieuws }}</h4>
+                    {% endif %}
+                    {% if message %}
+                    <h4 style="color: red;">{{ message }}</h4>
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+    </div>
+</center>
+{% endblock %}
