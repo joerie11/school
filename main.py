@@ -104,4 +104,4 @@ if __name__ == '__main__':
     dbfunc.db_connection('127.0.0.1', 27017)
     app.secret_key = 'super secret key'
     app.config['SESSION_TYPE'] = 'filesystem'
-    app.run(debug=True, ssl_context='adhoc', host='0.0.0.0', port=5000)
+    app.run(debug=True, ssl_context='adhoc', host='0.0.0.0', port=443)
