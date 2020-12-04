@@ -35,7 +35,7 @@ def koffiepunten():
             else:
                 goednieuws = "er zijn " + str( status_tekst) + " toegevoegd"
     punten = dbfunc.db_GetPunten(session['id'], session['oauth_provider'])
-    return render_template('koffiepunten.html', message=message, punten=punten, goednieuws=goednieuws)
+    return render_template('koffiepunten.html', message=message, punten=str(punten), goednieuws=goednieuws)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
