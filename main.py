@@ -57,10 +57,10 @@ def login():
             session['first_name'] = Firstname
             session['last_name'] = Lastname
             session['email'] = Email
-            session['oauth_provider'] = provider
+            session['oauth_provider'] = Provider
             exists = dbfunc.db_UserExist(id, provider)
             if exists == 1:
-                dbfunc.db_makeUser(Username, Firstname, Lastname, Email, id, provider)
+                dbfunc.db_makeUser(Username, Firstname, Lastname, Email, id, Provider)
             return redirect(url_for('index'))
         
         #login Joerie
@@ -76,10 +76,10 @@ def login():
             session['first_name'] = Firstname
             session['last_name'] = Lastname
             session['email'] = Email
-            session['oauth_provider'] = provider
+            session['oauth_provider'] = Provider
             exists = dbfunc.db_UserExist(id, provider)
             if exists == 1:
-                dbfunc.db_makeUser(Username, Firstname, Lastname, Email, id, provider)
+                dbfunc.db_makeUser(Username, Firstname, Lastname, Email, id, Provider)
             return redirect(url_for('index'))
         
         else:
